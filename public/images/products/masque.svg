@@ -1,0 +1,42 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg4" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1A1208"/>
+      <stop offset="100%" stop-color="#060504"/>
+    </radialGradient>
+    <linearGradient id="jar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A0F00"/>
+      <stop offset="35%" stop-color="#3D2B0A"/>
+      <stop offset="65%" stop-color="#2A1E07"/>
+      <stop offset="100%" stop-color="#0D0A04"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E07B39"/>
+      <stop offset="100%" stop-color="#7A4010"/>
+    </linearGradient>
+    <filter id="shadow4"><feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000" flood-opacity="0.65"/></filter>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg4)" rx="12"/>
+  <ellipse cx="300" cy="100" rx="70" ry="70" fill="#E07B39" opacity="0.05"/>
+  <ellipse cx="100" cy="380" rx="80" ry="60" fill="#DEB887" opacity="0.06"/>
+
+  <g filter="url(#shadow4)" transform="translate(200,270)">
+    <!-- Jar body -->
+    <path d="M-80,-90 Q-85,-110 -70,-120 L70,-120 Q85,-110 80,-90 L80,90 Q80,115 65,115 L-65,115 Q-80,115 -80,90Z" fill="url(#jar)"/>
+    <!-- Shine line -->
+    <line x1="-72" y1="-100" x2="-72" y2="100" stroke="rgba(255,255,255,0.08)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Label -->
+    <rect x="-70" y="-50" width="140" height="130" rx="4" fill="rgba(255,255,255,0.03)" stroke="#E07B39" stroke-width="0.5" stroke-opacity="0.4"/>
+    <text x="0" y="-22" text-anchor="middle" font-size="18" fill="#E07B39" opacity="0.9">♛</text>
+    <text x="0" y="-4" text-anchor="middle" font-family="Georgia" font-size="10" fill="#E07B39" letter-spacing="2" font-style="italic">Afro Queens</text>
+    <line x1="-40" y1="8" x2="40" y2="8" stroke="#E07B39" stroke-width="0.4" opacity="0.5"/>
+    <text x="0" y="26" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Masque</text><text x="0" y="43" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Capillaire</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Arial" font-size="8" fill="#E07B39" opacity="0.6" letter-spacing="1">SOIN NATUREL · PREMIUM</text>
+    <!-- Lid -->
+    <ellipse cx="0" cy="-120" rx="75" ry="18" fill="url(#lidGrad)"/>
+    <ellipse cx="0" cy="-130" rx="72" ry="12" fill="#E07B39" opacity="0.8"/>
+    <ellipse cx="0" cy="-132" rx="65" ry="6" fill="#E07B39" opacity="0.5"/>
+    <!-- Logo on lid -->
+    <text x="0" y="-127" text-anchor="middle" font-size="10" fill="white" opacity="0.8">♛</text>
+  </g>
+</svg>

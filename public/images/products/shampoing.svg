@@ -1,0 +1,71 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2D2010"/>
+      <stop offset="100%" stop-color="#0D0A04"/>
+    </radialGradient>
+    <linearGradient id="bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A0F00"/>
+      <stop offset="30%" stop-color="#3D2B0A"/>
+      <stop offset="70%" stop-color="#2A1E07"/>
+      <stop offset="100%" stop-color="#0D0A04"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+      <stop offset="40%" stop-color="rgba(255,255,255,0.15)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="labelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E07B3922"/>
+      <stop offset="100%" stop-color="#E07B3908"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="500" fill="url(#bg)" rx="12"/>
+  <!-- Ambient light spots -->
+  <ellipse cx="80" cy="80" rx="60" ry="60" fill="#E07B39" opacity="0.06"/>
+  <ellipse cx="320" cy="400" rx="80" ry="80" fill="#E07B39" opacity="0.04"/>
+  <!-- Leaf decoration -->
+  <g opacity="0.15" transform="translate(320,60) rotate(20)">
+    <ellipse cx="0" cy="0" rx="18" ry="40" fill="#4a7c59"/>
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#2d5a3d" stroke-width="1.5"/>
+  </g>
+  <g opacity="0.1" transform="translate(60,400) rotate(-15)">
+    <ellipse cx="0" cy="0" rx="12" ry="30" fill="#4a7c59"/>
+  </g>
+
+  <!-- Bottle body -->
+  <g filter="url(#shadow)" transform="translate(200,250)">
+    <!-- Neck -->
+    <rect x="-22" y="-185" width="44" height="45" rx="6" fill="url(#bottle)"/>
+    <!-- Shoulder curve -->
+    <path d="M -22 -140 Q -55 -120 -62 -90 L -62 100 Q -62 120 -42 120 L 42 120 Q 62 120 62 100 L 62 -90 Q 55 -120 22 -140 Z" fill="url(#bottle)"/>
+    <!-- Shine overlay -->
+    <path d="M -22 -140 Q -55 -120 -62 -90 L -62 100 Q -62 120 -42 120 L 42 120 Q 62 120 62 100 L 62 -90 Q 55 -120 22 -140 Z" fill="url(#shine)"/>
+    <!-- Label area -->
+    <rect x="-52" y="-60" width="104" height="130" rx="4" fill="url(#labelGrad)" stroke="#E07B39" stroke-width="0.5" stroke-opacity="0.4"/>
+    <!-- Crown icon -->
+    <text x="0" y="-30" text-anchor="middle" font-size="18" fill="#E07B39" opacity="0.9">♛</text>
+    <!-- Brand name -->
+    <text x="0" y="-10" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#E07B39" letter-spacing="2" font-style="italic">Afro Queens</text>
+    <!-- Divider -->
+    <line x1="-30" y1="0" x2="30" y2="0" stroke="#E07B39" stroke-width="0.5" opacity="0.5"/>
+    <!-- Product label -->
+    <text x="0" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" opacity="0.9" font-weight="600">Shampoing</text><text x="0" y="34" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="white" opacity="0.9" font-weight="600">Capillaire</text>
+    <!-- Sub label -->
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E07B39" opacity="0.7" letter-spacing="1.5">NATUREL · PREMIUM</text>
+    <!-- Pump top -->
+    <rect x="-8" y="-230" width="16" height="55" rx="4" fill="#2A1E07"/>
+    <rect x="-16" y="-240" width="32" height="18" rx="8" fill="#1A0F00"/>
+    <!-- Pump nozzle -->
+    <rect x="8" y="-222" width="30" height="8" rx="4" fill="#2A1E07"/>
+    <circle cx="38" cy="-218" r="5" fill="#1A0F00"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg3" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1A1208"/>
+      <stop offset="100%" stop-color="#060504"/>
+    </radialGradient>
+    <linearGradient id="bottle3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A0F00"/>
+      <stop offset="40%" stop-color="#3D2B0A"/>
+      <stop offset="100%" stop-color="#0D0A04"/>
+    </linearGradient>
+    <filter id="shadow3"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.65"/></filter>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg3)" rx="12"/>
+  <ellipse cx="90" cy="120" rx="65" ry="65" fill="#E07B39" opacity="0.05"/>
+  <!-- Spray mist dots -->
+  <g opacity="0.25">
+    <circle cx="290" cy="90" r="2" fill="#E07B39"/><circle cx="305" cy="75" r="1.5" fill="#E07B39"/>
+    <circle cx="320" cy="85" r="1" fill="#E07B39"/><circle cx="298" cy="100" r="1" fill="#E07B39"/>
+    <circle cx="315" cy="65" r="1.5" fill="#E07B39"/><circle cx="280" cy="78" r="1" fill="#E07B39"/>
+  </g>
+
+  <g filter="url(#shadow3)" transform="translate(190,265)">
+    <!-- Spray bottle - wider shape -->
+    <path d="M-42,-160 L-42,-180 L-10,-180 L-10,-200 L10,-200 L10,-180 L42,-180 L42,-160 Q55,-140 58,-100 L58,110 Q58,130 38,130 L-38,130 Q-58,130 -58,110 L-58,-100 Q-55,-140 -42,-160Z" fill="url(#bottle3)"/>
+    <!-- Shine -->
+    <path d="M-42,-160 L-42,-180 L-10,-180 L-10,-200 L10,-200 L10,-180 L42,-180 L42,-160 Q55,-140 58,-100 L58,110 Q58,130 38,130 L-38,130 Q-58,130 -58,110 L-58,-100 Q-55,-140 -42,-160Z" fill="rgba(255,255,255,0.06)"/>
+    <!-- Nozzle -->
+    <rect x="10" y="-195" width="55" height="12" rx="6" fill="#2A1E07"/>
+    <circle cx="65" cy="-189" r="7" fill="#1A0F00"/>
+    <!-- Label -->
+    <rect x="-48" y="-60" width="96" height="140" rx="4" fill="rgba(255,255,255,0.03)" stroke="#E07B39" stroke-width="0.5" stroke-opacity="0.4"/>
+    <text x="0" y="-30" text-anchor="middle" font-size="18" fill="#E07B39" opacity="0.9">♛</text>
+    <text x="0" y="-12" text-anchor="middle" font-family="Georgia" font-size="10" fill="#E07B39" letter-spacing="2" font-style="italic">Afro Queens</text>
+    <line x1="-35" y1="-2" x2="35" y2="-2" stroke="#E07B39" stroke-width="0.4" opacity="0.5"/>
+    <text x="0" y="16" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Spray</text><text x="0" y="32" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Capillaire</text>
+    <text x="0" y="72" text-anchor="middle" font-family="Arial" font-size="8" fill="#E07B39" opacity="0.6" letter-spacing="1.5">200 ML · NATUREL</text>
+  </g>
+</svg>
