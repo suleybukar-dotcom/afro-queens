@@ -119,3 +119,50 @@ body {
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes cartBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 .cart-bounce { animation: cartBounce 0.4s ease; }
+
+/* ── Mobile nav fixes ── */
+/* Prevent any white flash behind navbar */
+nav {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Smooth body padding for fixed nav */
+@media (max-width: 767px) {
+  /* Ensure content starts below navbar */
+  main > *:first-child {
+    scroll-margin-top: 64px;
+  }
+}
+
+/* Remove any default blue outlines on mobile tap */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #E07B39;
+  outline-offset: 2px;
+}
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Better tap targets mobile */
+@media (max-width: 767px) {
+  button, a {
+    min-height: 44px;
+  }
+}
+
+/* Image lazy load fade in */
+img {
+  transition: opacity 0.3s ease;
+}
+img[loading="lazy"] {
+  opacity: 0;
+}
+img[loading="lazy"].loaded,
+img:not([loading]) {
+  opacity: 1;
+}

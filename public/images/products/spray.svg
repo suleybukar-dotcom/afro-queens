@@ -1,39 +1,129 @@
 <svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+
   <defs>
-    <radialGradient id="bg3" cx="40%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#1A1208"/>
-      <stop offset="100%" stop-color="#060504"/>
+    <!-- Backgrounds -->
+    <radialGradient id="bgGradSP" cx="35%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#2D1A06"/>
+      <stop offset="60%" stop-color="#150D02"/>
+      <stop offset="100%" stop-color="#080501"/>
     </radialGradient>
-    <linearGradient id="bottle3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1A0F00"/>
-      <stop offset="40%" stop-color="#3D2B0A"/>
-      <stop offset="100%" stop-color="#0D0A04"/>
+    <!-- Bottle amber glass -->
+    <linearGradient id="amberSP" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#1C0E00"/>
+      <stop offset="20%"  stop-color="#4A2C0A"/>
+      <stop offset="45%"  stop-color="#6B3E10"/>
+      <stop offset="70%"  stop-color="#3D2208"/>
+      <stop offset="100%" stop-color="#100800"/>
     </linearGradient>
-    <filter id="shadow3"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.65"/></filter>
+    <!-- Glass highlight -->
+    <linearGradient id="shineSP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(255,220,160,0.22)"/>
+      <stop offset="40%"  stop-color="rgba(255,200,120,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <!-- Edge darkening -->
+    <radialGradient id="vignetteSP" cx="50%" cy="50%" r="50%">
+      <stop offset="60%"  stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+    </radialGradient>
+    <!-- Gold gradient -->
+    <linearGradient id="goldSP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F0C060"/>
+      <stop offset="50%"  stop-color="#D4A843"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <!-- Orange accent -->
+    <linearGradient id="orangeSP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F09050"/>
+      <stop offset="100%" stop-color="#C4622A"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadowSP" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+    <!-- Soft glow -->
+    <filter id="glowSP">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Label texture -->
+    <linearGradient id="labelSP" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(244,220,160,0.08)"/>
+      <stop offset="100%" stop-color="rgba(200,150,60,0.04)"/>
+    </linearGradient>
   </defs>
-  <rect width="400" height="500" fill="url(#bg3)" rx="12"/>
-  <ellipse cx="90" cy="120" rx="65" ry="65" fill="#E07B39" opacity="0.05"/>
-  <!-- Spray mist dots -->
-  <g opacity="0.25">
-    <circle cx="290" cy="90" r="2" fill="#E07B39"/><circle cx="305" cy="75" r="1.5" fill="#E07B39"/>
-    <circle cx="320" cy="85" r="1" fill="#E07B39"/><circle cx="298" cy="100" r="1" fill="#E07B39"/>
-    <circle cx="315" cy="65" r="1.5" fill="#E07B39"/><circle cx="280" cy="78" r="1" fill="#E07B39"/>
+
+  <!-- BG -->
+  <rect width="400" height="500" fill="url(#bgGradSP)"/>
+  <!-- Bokeh spots -->
+  <circle cx="60"  cy="80"  r="45" fill="#E07B39" opacity="0.06"/>
+  <circle cx="340" cy="400" r="70" fill="#D4A843" opacity="0.05"/>
+  <circle cx="350" cy="70"  r="25" fill="#D4A843" opacity="0.04"/>
+  <circle cx="50"  cy="420" r="35" fill="#E07B39" opacity="0.04"/>
+  <!-- Surface reflection line -->
+  <ellipse cx="200" cy="460" rx="120" ry="8" fill="#E07B39" opacity="0.12"/>
+  <!-- Surface gradient -->
+  <rect x="0" y="440" width="400" height="60" fill="url(#bgGradSP)" opacity="0.7"/>
+  <!-- Vignette -->
+  <rect width="400" height="500" fill="url(#vignetteSP)"/>
+
+  <g opacity="0.18">
+    <ellipse cx="62" cy="340" rx="10" ry="28" fill="#3D6B45" transform="rotate(-20 62 340)"/>
+    <ellipse cx="72" cy="360" rx="7"  ry="20" fill="#2D5234" transform="rotate(-35 72 360)"/>
+    <ellipse cx="338" cy="120" rx="9" ry="24" fill="#3D6B45" transform="rotate(15 338 120)"/>
+    <ellipse cx="330" cy="140" rx="6" ry="18" fill="#2D5234" transform="rotate(30 330 140)"/>
   </g>
 
-  <g filter="url(#shadow3)" transform="translate(190,265)">
-    <!-- Spray bottle - wider shape -->
-    <path d="M-42,-160 L-42,-180 L-10,-180 L-10,-200 L10,-200 L10,-180 L42,-180 L42,-160 Q55,-140 58,-100 L58,110 Q58,130 38,130 L-38,130 Q-58,130 -58,110 L-58,-100 Q-55,-140 -42,-160Z" fill="url(#bottle3)"/>
-    <!-- Shine -->
-    <path d="M-42,-160 L-42,-180 L-10,-180 L-10,-200 L10,-200 L10,-180 L42,-180 L42,-160 Q55,-140 58,-100 L58,110 Q58,130 38,130 L-38,130 Q-58,130 -58,110 L-58,-100 Q-55,-140 -42,-160Z" fill="rgba(255,255,255,0.06)"/>
-    <!-- Nozzle -->
-    <rect x="10" y="-195" width="55" height="12" rx="6" fill="#2A1E07"/>
-    <circle cx="65" cy="-189" r="7" fill="#1A0F00"/>
-    <!-- Label -->
-    <rect x="-48" y="-60" width="96" height="140" rx="4" fill="rgba(255,255,255,0.03)" stroke="#E07B39" stroke-width="0.5" stroke-opacity="0.4"/>
-    <text x="0" y="-30" text-anchor="middle" font-size="18" fill="#E07B39" opacity="0.9">♛</text>
-    <text x="0" y="-12" text-anchor="middle" font-family="Georgia" font-size="10" fill="#E07B39" letter-spacing="2" font-style="italic">Afro Queens</text>
-    <line x1="-35" y1="-2" x2="35" y2="-2" stroke="#E07B39" stroke-width="0.4" opacity="0.5"/>
-    <text x="0" y="16" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Spray</text><text x="0" y="32" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Capillaire</text>
-    <text x="0" y="72" text-anchor="middle" font-family="Arial" font-size="8" fill="#E07B39" opacity="0.6" letter-spacing="1.5">200 ML · NATUREL</text>
+<g filter="url(#shadowSP)">
+  <!-- Spray head platform -->
+  <path d="M 175 115 L 175 100 L 225 100 L 225 115 Q 225 122 235 125 L 275 125 L 275 140 L 235 140 Q 220 140 218 130 L 218 130 L 182 130 Q 175 130 175 122 Z" fill="#2A1800"/>
+  <!-- Nozzle tube -->
+  <rect x="225" y="126" width="50" height="12" rx="6" fill="#1A1000"/>
+  <circle cx="275" cy="132" r="8" fill="#1A1000"/>
+  <circle cx="275" cy="132" r="4" fill="url(#orangeSP)" opacity="0.7"/>
+  <!-- Spray mist -->
+  <g opacity="0.35">
+    <circle cx="292" cy="118" r="2.5" fill="#E07B39"/>
+    <circle cx="304" cy="110" r="1.8" fill="#D4A843"/>
+    <circle cx="298" cy="103" r="1.2" fill="#E07B39"/>
+    <circle cx="313" cy="120" r="1.5" fill="#D4A843"/>
+    <circle cx="307" cy="98"  r="1"   fill="#E07B39"/>
+    <circle cx="320" cy="112" r="1"   fill="#D4A843"/>
+    <circle cx="286" cy="105" r="1.5" fill="#E07B39"/>
   </g>
+  <!-- Pump knob -->
+  <rect x="182" y="80" width="36" height="28" rx="10" fill="#1A1000"/>
+  <rect x="187" y="76" width="26" height="18" rx="8"  fill="#2A1800"/>
+
+  <!-- Bottle body — wider spray shape -->
+  <path d="
+    M 168 140
+    Q 140 143 135 162
+    L 132 315
+    Q 131 360 200 362
+    Q 269 360 268 315
+    L 265 162
+    Q 260 143 232 140
+    Z" fill="url(#amberSP)"/>
+
+  <!-- Left shine -->
+  <path d="M 143 162 Q 137 230 138 310 L 146 310 Q 145 230 150 162 Z" fill="rgba(255,200,100,0.12)"/>
+  <!-- Right micro-shine -->
+  <path d="M 257 165 L 261 165 L 263 308 L 259 308 Z" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Label -->
+  <path d="M 146 192 Q 144 188 200 186 Q 256 188 254 192 L 254 318 Q 256 327 200 329 Q 144 327 146 318 Z"
+    fill="url(#labelSP)" stroke="rgba(212,168,67,0.3)" stroke-width="0.6"/>
+
+  
+  <text x="200" y="-38" text-anchor="middle" font-size="18" fill="url(#goldSP)" opacity="0.95" filter="url(#glowSP)">♛</text>
+  <text x="200" y="-18" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="url(#goldSP)" letter-spacing="2.5" font-style="italic" opacity="0.9">Afro Queens</text>
+  <line x1="155" y1="-6" x2="245" y2="-6" stroke="url(#goldSP)" stroke-width="0.5" opacity="0.5"/>
+  <text x="200" y="16" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" fill="white" opacity="0.95" font-weight="700" letter-spacing="0.5">Spray</text><text x="200" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" fill="white" opacity="0.95" font-weight="700" letter-spacing="0.5">Capillaire</text>
+  <line x1="160" y1="60" x2="240" y2="60" stroke="url(#goldSP)" stroke-width="0.4" opacity="0.35"/>
+  <text x="200" y="74" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="url(#goldSP)" opacity="0.65" letter-spacing="2">HYDRATATION · 200 ML</text>
+
+  <ellipse cx="200" cy="356" rx="70" ry="8" fill="rgba(80,45,5,0.5)"/>
+  <ellipse cx="200" cy="460" rx="85" ry="9" fill="#E07B39" opacity="0.07"/>
+</g>
 </svg>

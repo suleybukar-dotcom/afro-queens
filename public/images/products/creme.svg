@@ -1,42 +1,120 @@
 <svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="bg4" cx="50%" cy="40%" r="65%">
-      <stop offset="0%" stop-color="#1A1208"/>
-      <stop offset="100%" stop-color="#060504"/>
-    </radialGradient>
-    <linearGradient id="jar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1A0F00"/>
-      <stop offset="35%" stop-color="#3D2B0A"/>
-      <stop offset="65%" stop-color="#2A1E07"/>
-      <stop offset="100%" stop-color="#0D0A04"/>
-    </linearGradient>
-    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#D4A843"/>
-      <stop offset="100%" stop-color="#7A4010"/>
-    </linearGradient>
-    <filter id="shadow4"><feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000" flood-opacity="0.65"/></filter>
-  </defs>
-  <rect width="400" height="500" fill="url(#bg4)" rx="12"/>
-  <ellipse cx="300" cy="100" rx="70" ry="70" fill="#D4A843" opacity="0.05"/>
-  <ellipse cx="100" cy="380" rx="80" ry="60" fill="#F5DEB3" opacity="0.06"/>
 
-  <g filter="url(#shadow4)" transform="translate(200,270)">
-    <!-- Jar body -->
-    <path d="M-65,-90 Q-70,-110 -55,-120 L55,-120 Q70,-110 65,-90 L65,90 Q65,115 50,115 L-50,115 Q-65,115 -65,90Z" fill="url(#jar)"/>
-    <!-- Shine line -->
-    <line x1="-57" y1="-100" x2="-57" y2="100" stroke="rgba(255,255,255,0.08)" stroke-width="8" stroke-linecap="round"/>
-    <!-- Label -->
-    <rect x="-55" y="-50" width="110" height="130" rx="4" fill="rgba(255,255,255,0.03)" stroke="#D4A843" stroke-width="0.5" stroke-opacity="0.4"/>
-    <text x="0" y="-22" text-anchor="middle" font-size="18" fill="#D4A843" opacity="0.9">♛</text>
-    <text x="0" y="-4" text-anchor="middle" font-family="Georgia" font-size="10" fill="#D4A843" letter-spacing="2" font-style="italic">Afro Queens</text>
-    <line x1="-40" y1="8" x2="40" y2="8" stroke="#D4A843" stroke-width="0.4" opacity="0.5"/>
-    <text x="0" y="26" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Crème</text><text x="0" y="43" text-anchor="middle" font-family="Georgia" font-size="13" fill="white" opacity="0.9" font-weight="600">Capillaire</text>
-    <text x="0" y="72" text-anchor="middle" font-family="Arial" font-size="8" fill="#D4A843" opacity="0.6" letter-spacing="1">SOIN NATUREL · PREMIUM</text>
-    <!-- Lid -->
-    <ellipse cx="0" cy="-120" rx="60" ry="18" fill="url(#lidGrad)"/>
-    <ellipse cx="0" cy="-130" rx="57" ry="12" fill="#D4A843" opacity="0.8"/>
-    <ellipse cx="0" cy="-132" rx="50" ry="6" fill="#D4A843" opacity="0.5"/>
-    <!-- Logo on lid -->
-    <text x="0" y="-127" text-anchor="middle" font-size="10" fill="white" opacity="0.8">♛</text>
+  <defs>
+    <!-- Backgrounds -->
+    <radialGradient id="bgGradCR" cx="35%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#2D1A06"/>
+      <stop offset="60%" stop-color="#150D02"/>
+      <stop offset="100%" stop-color="#080501"/>
+    </radialGradient>
+    <!-- Bottle amber glass -->
+    <linearGradient id="amberCR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#1C0E00"/>
+      <stop offset="20%"  stop-color="#4A2C0A"/>
+      <stop offset="45%"  stop-color="#6B3E10"/>
+      <stop offset="70%"  stop-color="#3D2208"/>
+      <stop offset="100%" stop-color="#100800"/>
+    </linearGradient>
+    <!-- Glass highlight -->
+    <linearGradient id="shineCR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(255,220,160,0.22)"/>
+      <stop offset="40%"  stop-color="rgba(255,200,120,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <!-- Edge darkening -->
+    <radialGradient id="vignetteCR" cx="50%" cy="50%" r="50%">
+      <stop offset="60%"  stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.55)"/>
+    </radialGradient>
+    <!-- Gold gradient -->
+    <linearGradient id="goldCR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F0C060"/>
+      <stop offset="50%"  stop-color="#D4A843"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <!-- Orange accent -->
+    <linearGradient id="orangeCR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F09050"/>
+      <stop offset="100%" stop-color="#C4622A"/>
+    </linearGradient>
+    <!-- Shadow filter -->
+    <filter id="shadowCR" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
+    <!-- Soft glow -->
+    <filter id="glowCR">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Label texture -->
+    <linearGradient id="labelCR" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(244,220,160,0.08)"/>
+      <stop offset="100%" stop-color="rgba(200,150,60,0.04)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BG -->
+  <rect width="400" height="500" fill="url(#bgGradCR)"/>
+  <!-- Bokeh spots -->
+  <circle cx="60"  cy="80"  r="45" fill="#D4A843" opacity="0.06"/>
+  <circle cx="340" cy="400" r="70" fill="#D4A843" opacity="0.05"/>
+  <circle cx="350" cy="70"  r="25" fill="#D4A843" opacity="0.04"/>
+  <circle cx="50"  cy="420" r="35" fill="#D4A843" opacity="0.04"/>
+  <!-- Surface reflection line -->
+  <ellipse cx="200" cy="460" rx="120" ry="8" fill="#D4A843" opacity="0.12"/>
+  <!-- Surface gradient -->
+  <rect x="0" y="440" width="400" height="60" fill="url(#bgGradCR)" opacity="0.7"/>
+  <!-- Vignette -->
+  <rect width="400" height="500" fill="url(#vignetteCR)"/>
+
+  <g opacity="0.18">
+    <ellipse cx="62" cy="340" rx="10" ry="28" fill="#3D6B45" transform="rotate(-20 62 340)"/>
+    <ellipse cx="72" cy="360" rx="7"  ry="20" fill="#2D5234" transform="rotate(-35 72 360)"/>
+    <ellipse cx="338" cy="120" rx="9" ry="24" fill="#3D6B45" transform="rotate(15 338 120)"/>
+    <ellipse cx="330" cy="140" rx="6" ry="18" fill="#2D5234" transform="rotate(30 330 140)"/>
   </g>
+
+<g filter="url(#shadowCR)">
+  <!-- Lid top face (ellipse) -->
+  <ellipse cx="200" cy="168" rx="90" ry="18" fill="url(#goldCR)"/>
+  <!-- Lid side band -->
+  <path d="M 110 168 L 110 192 Q 110 205 200 207 Q 290 205 290 192 L 290 168 Q 290 186 200 186 Q 110 186 110 168 Z" fill="#8B6914"/>
+  <!-- Lid shine -->
+  <path d="M 118 170 Q 115 180 118 190 L 125 190 Q 122 180 125 170 Z" fill="rgba(255,220,100,0.2)"/>
+  <!-- Logo on lid -->
+  <text x="200" y="175" text-anchor="middle" font-size="20" fill="rgba(26,15,0,0.7)">♛</text>
+  <text x="200" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="rgba(26,15,0,0.5)" letter-spacing="2" font-style="italic">Afro Queens</text>
+
+  <!-- Jar body -->
+  <path d="
+    M 112 205
+    Q 110 207 110 215
+    L 110 340
+    Q 110 365 200 368
+    Q 290 365 290 340
+    L 290 215
+    Q 290 207 288 205
+    Z" fill="url(#amberCR)"/>
+
+  <!-- Left shine -->
+  <path d="M 118 215 Q 114 275 115 335 L 124 335 Q 122 275 126 215 Z" fill="rgba(255,200,100,0.12)"/>
+  <!-- Right micro-shine -->
+  <path d="M 278 218 L 283 218 L 283 332 L 278 332 Z" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Label -->
+  <path d="M 120 232 Q 118 228 200 226 Q 282 228 280 232 L 280 342 Q 282 352 200 354 Q 118 352 120 342 Z"
+    fill="url(#labelCR)" stroke="rgba(212,168,67,0.3)" stroke-width="0.6"/>
+
+  
+  <text x="200" y="-38" text-anchor="middle" font-size="18" fill="url(#goldCR)" opacity="0.95" filter="url(#glowCR)">♛</text>
+  <text x="200" y="-18" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="url(#goldCR)" letter-spacing="2.5" font-style="italic" opacity="0.9">Afro Queens</text>
+  <line x1="155" y1="-6" x2="245" y2="-6" stroke="url(#goldCR)" stroke-width="0.5" opacity="0.5"/>
+  <text x="200" y="16" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" fill="white" opacity="0.95" font-weight="700" letter-spacing="0.5">Crème</text><text x="200" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="13.5" fill="white" opacity="0.95" font-weight="700" letter-spacing="0.5">Capillaire</text>
+  <line x1="160" y1="60" x2="240" y2="60" stroke="url(#goldCR)" stroke-width="0.4" opacity="0.35"/>
+  <text x="200" y="74" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="url(#goldCR)" opacity="0.65" letter-spacing="2">NOURRISSANTE · 200 ML</text>
+
+  <!-- Bottom -->
+  <ellipse cx="200" cy="362" rx="88" ry="10" fill="rgba(80,45,5,0.5)"/>
+  <ellipse cx="200" cy="460" rx="100" ry="10" fill="#D4A843" opacity="0.08"/>
+</g>
 </svg>

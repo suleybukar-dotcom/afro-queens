@@ -45,7 +45,7 @@ export default function BlogPostPage({ params }: Props) {
       {/* Hero */}
       <div className="relative bg-noir-DEFAULT pt-24">
         <div className="absolute inset-0">
-          <Image src={article.image} alt={article.title} fill className="object-cover opacity-20" />
+          <Image src={article.image} alt={article.title} fill className="object-cover opacity-20" unoptimized={article.image.endsWith(".svg")} />
         </div>
         <div className="relative max-w-4xl mx-auto px-4 md:px-8 py-20 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
