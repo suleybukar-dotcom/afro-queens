@@ -15,13 +15,11 @@ export default function WhatsAppButton() {
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="font-sans font-bold text-sm text-[#1A1A1A]">Besoin d&apos;aide ?</p>
-              <p className="text-xs text-[#6B6B6B] font-sans mt-1 leading-relaxed">
-                Contactez-nous sur WhatsApp — réponse en moins de 2h ! 💚
-              </p>
-              <p className="text-xs text-[#E07B39] font-sans mt-1 font-bold">{contactInfo.whatsappDisplay}</p>
+              <p className="text-xs text-[#6B6B6B] font-sans mt-1 leading-relaxed">Contactez-nous sur WhatsApp ! 💚</p>
+              <p className="text-xs text-[#E07B39] font-sans mt-1 font-bold">{contactInfo.phone1}</p>
             </div>
-            <button onClick={() => setShowTooltip(false)} className="text-[#6B6B6B] hover:text-[#1A1A1A]">
-              <X size={16} />
+            <button onClick={() => setShowTooltip(false)} className="text-[#9E9E9E] hover:text-[#1A1A1A]">
+              <X size={16}/>
             </button>
           </div>
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
@@ -33,7 +31,7 @@ export default function WhatsAppButton() {
       <button onClick={() => setShowTooltip(!showTooltip)}
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110"
         aria-label="WhatsApp" style={{animation:'float 3s ease-in-out infinite'}}>
-        <MessageCircle size={26} className="text-white" fill="white" />
+        <MessageCircle size={26} className="text-white" fill="white"/>
       </button>
     </div>
   );

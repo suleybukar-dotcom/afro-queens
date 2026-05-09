@@ -28,17 +28,18 @@ export default function ContactPage() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-20">
         <div className="grid lg:grid-cols-3 gap-12">
-          <div className="space-y-6">
+          <div className="space-y-5">
             <p className="text-xs tracking-[0.3em] uppercase text-[#E07B39] mb-6">Nos coordonnées</p>
             {[
               { icon: <Mail size={20}/>, title: "Email", content: contactInfo.email, href: `mailto:${contactInfo.email}` },
-              { icon: <Phone size={20}/>, title: "Téléphone", content: contactInfo.phone, href: `tel:${contactInfo.whatsapp}` },
+              { icon: <Phone size={20}/>, title: "Téléphone 1", content: contactInfo.phone1, href: `tel:${contactInfo.phone1.replace(/\s/g,'')}` },
+              { icon: <Phone size={20}/>, title: "Téléphone 2", content: contactInfo.phone2, href: `tel:${contactInfo.phone2.replace(/\s/g,'')}` },
               { icon: <MapPin size={20}/>, title: "Localisation", content: contactInfo.address, href: null },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 p-5 bg-[#F5F0EA] hover:bg-[#E07B39]/5 transition-colors">
                 <div className="text-[#E07B39] mt-0.5">{item.icon}</div>
                 <div>
-                  <p className="text-xs font-sans text-[#6B6B6B] tracking-wide uppercase mb-1">{item.title}</p>
+                  <p className="text-xs font-sans text-[#9E9E9E] tracking-wide uppercase mb-1">{item.title}</p>
                   {item.href
                     ? <a href={item.href} className="font-sans text-sm text-[#1A1A1A] hover:text-[#E07B39] transition-colors">{item.content}</a>
                     : <p className="font-sans text-sm text-[#1A1A1A]">{item.content}</p>
@@ -52,7 +53,7 @@ export default function ContactPage() {
                 <MessageCircle size={24} fill="white"/>
                 <span className="font-sans font-bold text-sm">WhatsApp Direct</span>
               </div>
-              <p className="text-white/80 text-sm font-sans mb-1">{contactInfo.whatsappDisplay}</p>
+              <p className="text-white/80 text-sm font-sans mb-1">{contactInfo.phone1}</p>
               <p className="text-white/70 text-xs font-sans mb-4">Réponse en moins de 2 heures</p>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
                 className="w-full bg-white text-green-600 font-sans font-bold text-sm py-3 flex items-center justify-center gap-2 hover:bg-green-50 transition-colors">
@@ -88,7 +89,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {[{key:'name',label:'Nom complet',type:'text',req:true},{key:'email',label:'Email',type:'email',req:true}].map(f => (
                     <div key={f.key}>
-                      <label className="block text-xs font-sans tracking-widest uppercase text-[#6B6B6B] mb-2">{f.label} {f.req&&'*'}</label>
+                      <label className="block text-xs font-sans tracking-widest uppercase text-[#9E9E9E] mb-2">{f.label} {f.req&&'*'}</label>
                       <input type={f.type} required={f.req} value={form[f.key as keyof typeof form]}
                         onChange={e => setForm({...form,[f.key]:e.target.value})}
                         className="w-full border border-gray-200 px-5 py-4 font-sans text-sm outline-none focus:border-[#E07B39] transition-colors"/>
@@ -96,7 +97,7 @@ export default function ContactPage() {
                   ))}
                 </div>
                 <div>
-                  <label className="block text-xs font-sans tracking-widest uppercase text-[#6B6B6B] mb-2">Sujet</label>
+                  <label className="block text-xs font-sans tracking-widest uppercase text-[#9E9E9E] mb-2">Sujet</label>
                   <select value={form.subject} onChange={e => setForm({...form,subject:e.target.value})}
                     className="w-full border border-gray-200 px-5 py-4 font-sans text-sm outline-none focus:border-[#E07B39] transition-colors bg-white">
                     <option value="">Choisir un sujet</option>
@@ -108,17 +109,15 @@ export default function ContactPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-sans tracking-widest uppercase text-[#6B6B6B] mb-2">Message *</label>
+                  <label className="block text-xs font-sans tracking-widest uppercase text-[#9E9E9E] mb-2">Message *</label>
                   <textarea required rows={8} value={form.message} onChange={e => setForm({...form,message:e.target.value})}
                     className="w-full border border-gray-200 px-5 py-4 font-sans text-sm outline-none focus:border-[#E07B39] transition-colors resize-none"
                     placeholder="Décrivez votre demande..."/>
                 </div>
                 <button type="submit" disabled={loading}
                   className="btn-primary flex items-center gap-3 w-full md:w-auto justify-center disabled:opacity-60">
-                  {loading
-                    ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/>Envoi...</>
-                    : <><Send size={16}/>Envoyer le message</>
-                  }
+                  {loading ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/>Envoi...</>
+                    : <><Send size={16}/>Envoyer le message</>}
                 </button>
               </form>
             )}
