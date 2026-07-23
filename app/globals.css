@@ -155,14 +155,5 @@ html, body {
   }
 }
 
-/* Image lazy load fade in */
-img {
-  transition: opacity 0.3s ease;
-}
-img[loading="lazy"] {
-  opacity: 0;
-}
-img[loading="lazy"].loaded,
-img:not([loading]) {
-  opacity: 1;
-}
+/* Les images (lazy incluses) sont toujours visibles dès leur chargement.
+   (L'ancien fade-in attendait une classe .loaded jamais ajoutée → images invisibles) */

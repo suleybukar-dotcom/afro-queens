@@ -25,16 +25,15 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div className="group bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
-      {/* Image container */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: '1', background: 'linear-gradient(135deg, #1A0F00 0%, #2D1A06 50%, #150D02 100%)' }}>
+      {/* Image container — produit toujours entièrement visible (object-contain) */}
+      <div className="relative overflow-hidden bg-[#F5F0EA]" style={{ aspectRatio: '1' }}>
         {!imgError ? (
           <Image
             src={product.image}
             alt={product.name}
             fill
-            loading="lazy"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-contain transition-transform duration-700 group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (

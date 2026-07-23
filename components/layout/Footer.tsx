@@ -41,7 +41,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <div className="relative w-12 h-12">
-              <Image src="/images/logo.jpeg" alt="Afro Queens" fill className="object-contain"/>
+              <Image src="/images/logo.jpeg" alt="Afro Queens" fill sizes="48px" className="object-contain"/>
             </div>
             <div>
               <p className="font-script text-xl text-white">Afro Queens</p>

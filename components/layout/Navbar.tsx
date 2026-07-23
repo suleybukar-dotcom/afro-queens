@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0" onClick={() => setMenuOpen(false)}>
             <div className="relative w-10 h-10 md:w-12 md:h-12">
-              <Image src="/images/logo.jpeg" alt="Afro Queens" fill className="object-contain" />
+              <Image src="/images/logo.jpeg" alt="Afro Queens" fill sizes="48px" className="object-contain" />
             </div>
             <div className="hidden sm:block">
               <p className="font-script text-base md:text-lg leading-none text-white">Afro Queens</p>

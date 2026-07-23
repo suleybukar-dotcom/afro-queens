@@ -26,7 +26,7 @@ export default function BlogImage({ src, alt }: Props) {
       src={src}
       alt={alt}
       fill
-      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 33vw"
       className="object-cover transition-transform duration-700 group-hover:scale-105"
       onError={() => setError(true)}
       unoptimized={src.endsWith('.svg')}

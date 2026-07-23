@@ -64,12 +64,14 @@ export default function ProductPage({ params }: Props) {
                 {product.badge}
               </span>
             )}
-            <div className="relative aspect-square bg-gris-warm overflow-hidden">
+            <div className="relative aspect-square bg-[#F5F0EA] overflow-hidden">
+              {/* Photo entière, centrée, jamais coupée */}
               <Image
                 src={gallery[activeImage]}
                 alt={product.name}
                 fill
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
                 priority
               />
               {/* Volume badge */}
@@ -85,11 +87,11 @@ export default function ProductPage({ params }: Props) {
                     key={img}
                     onClick={() => setActiveImage(i)}
                     aria-label={`Photo ${i + 1} de ${product.name}`}
-                    className={`relative aspect-square overflow-hidden bg-gris-warm transition-all ${
+                    className={`relative aspect-square overflow-hidden bg-[#F5F0EA] transition-all ${
                       activeImage === i ? 'ring-2 ring-orange-DEFAULT' : 'opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <Image src={img} alt={`${product.name} — vue ${i + 1}`} fill className="object-cover" sizes="120px" />
+                    <Image src={img} alt={`${product.name} — vue ${i + 1}`} fill sizes="140px" className="object-contain" loading="eager" />
                   </button>
                 ))}
               </div>

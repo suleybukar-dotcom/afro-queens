@@ -45,7 +45,7 @@ export default function BlogPostPage({ params }: Props) {
       {/* Hero */}
       <div className="relative bg-noir-DEFAULT pt-24">
         <div className="absolute inset-0">
-          <Image src={article.image} alt={article.title} fill className="object-cover opacity-20" unoptimized={article.image.endsWith(".svg")} />
+          <Image src={article.image} alt={article.title} fill sizes="100vw" className="object-cover opacity-20" unoptimized={article.image.endsWith(".svg")} />
         </div>
         <div className="relative max-w-4xl mx-auto px-4 md:px-8 py-20 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -73,7 +73,7 @@ export default function BlogPostPage({ params }: Props) {
         </Link>
 
         <div className="relative aspect-video mb-12 overflow-hidden">
-          <Image src={article.image} alt={article.title} fill className="object-cover" />
+          <Image src={article.image} alt={article.title} fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" unoptimized={article.image.endsWith(".svg")} />
         </div>
 
         <div className="prose prose-lg max-w-none">
@@ -107,7 +107,7 @@ export default function BlogPostPage({ params }: Props) {
             {related.map(a => (
               <Link key={a.id} href={`/blog/${a.slug}`} className="group flex gap-6 card-hover p-4 bg-gris-warm">
                 <div className="relative w-24 h-24 flex-shrink-0 overflow-hidden">
-                  <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <Image src={a.image} alt={a.title} fill sizes="96px" className="object-cover group-hover:scale-105 transition-transform duration-300" unoptimized={a.image.endsWith(".svg")} />
                 </div>
                 <div>
                   <p className="text-xs font-sans text-orange-DEFAULT mb-2">{a.category}</p>

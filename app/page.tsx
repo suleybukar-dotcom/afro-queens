@@ -20,7 +20,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/hero.jpg" alt="Afro Queens — soins capillaires naturels" fill className="object-cover" priority />
+          <Image src="/images/hero.jpg" alt="Afro Queens — soins capillaires naturels" fill sizes="100vw" className="object-cover" priority />
         </div>
         <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(26,15,0,0.82) 0%,rgba(26,15,0,0.55) 45%,rgba(26,15,0,0.15) 100%)'}}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center">
@@ -60,7 +60,7 @@ export default function HomePage() {
               <div className="absolute inset-0 rounded-full border border-[#D4A843]/20" style={{transform:'scale(1.15)'}}/>
               <div className="absolute inset-0 rounded-full border border-[#E07B39]/10" style={{transform:'scale(1.3)'}}/>
               <div className="relative rounded-full overflow-hidden w-full h-full">
-                <Image src="/images/logo.jpeg" alt="Afro Queens" fill className="object-cover animate-float" />
+                <Image src="/images/logo.jpeg" alt="Afro Queens" fill sizes="320px" className="object-cover animate-float" />
               </div>
             </div>
           </div>
@@ -148,8 +148,8 @@ export default function HomePage() {
             <div className="absolute -top-4 -left-4 w-24 h-24 border border-[#D4A843]/30 z-0"/>
             <div className="grid grid-cols-2 gap-3 relative z-10">
               {products.slice(0,4).map(p => (
-                <div key={p.id} className="rounded overflow-hidden relative" style={{aspectRatio:'1'}}>
-                  <Image src={p.image} alt={p.name} fill className="object-cover"/>
+                <div key={p.id} className="rounded overflow-hidden relative bg-[#F5F0EA]" style={{aspectRatio:'1'}}>
+                  <Image src={p.image} alt={p.name} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-contain"/>
                 </div>
               ))}
             </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
       {/* CTA BANNER */}
       <section className="relative py-24 overflow-hidden" style={{backgroundColor:'#1A0F00'}}>
         <div className="absolute inset-0">
-          <Image src="/images/products/gamme.jpg" alt="Gamme complète Afro Queens" fill className="object-cover opacity-10" />
+          <Image src="/images/products/gamme.jpg" alt="Gamme complète Afro Queens" fill sizes="100vw" className="object-cover opacity-10" />
         </div>
         <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(26,15,0,0.94) 0%,rgba(61,43,10,0.90) 50%,rgba(26,15,0,0.94) 100%)'}}/>
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">

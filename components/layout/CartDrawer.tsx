@@ -55,7 +55,8 @@ export default function CartDrawer() {
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover"
+                      sizes="80px"
+                      className="object-contain"
                     />
                   </div>
                   <div className="flex-1">
