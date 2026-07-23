@@ -29,7 +29,7 @@ export default function BundlesSection({ showTitle = true, showCta = true, max }
         </div>
         <div className="mt-10 text-center">
           <p className="text-xs font-sans text-[#9E9E9E]">
-            🚚 <strong className="text-[#E07B39]">Livraison offerte</strong> à partir de 100$ CAD · Paiement 100% sécurisé
+            🚚 <strong className="text-[#E07B39]">Livraison offerte</strong> à partir de 200 CAD d&apos;achat · Commande simple via WhatsApp
           </p>
         </div>
         {showCta && (

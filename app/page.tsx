@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, ShieldCheck } from 'lucide-react';
 import { products } from '@/lib/data';
 import ProductCard from '@/components/ui/ProductCard';
 import BundlesSection from '@/components/sections/BundlesSection';
@@ -20,9 +20,9 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero-gradient min-h-screen flex items-center relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/products-grid.jpeg" alt="Afro Queens" fill className="object-cover opacity-20" priority />
+          <Image src="/images/hero.jpg" alt="Afro Queens — soins capillaires naturels" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(26,15,0,0.75) 0%,rgba(61,43,10,0.55) 100%)'}}/>
+        <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(26,15,0,0.82) 0%,rgba(26,15,0,0.55) 45%,rgba(26,15,0,0.15) 100%)'}}/>
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-24 pb-16 grid md:grid-cols-2 gap-12 items-center">
           <div className="text-white fade-in">
             <div className="inline-flex items-center gap-3 mb-8">
@@ -47,7 +47,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="flex flex-wrap gap-6 mt-12">
-              {['Livraison offerte dès 100$ CAD','Sans sulfates','Vegan & naturel','Paiement sécurisé'].map(item => (
+              {['Livraison offerte dès 200 CAD','Sans sulfates','Certifié Santé Canada','Fabriqué au Canada'].map(item => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle size={13} className="text-[#D4A843]" />
                   <span className="text-white/70 text-xs font-sans">{item}</span>
@@ -93,6 +93,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CERTIFICATION SANTÉ CANADA */}
+      <section className="bg-white pb-20">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <div className="relative border border-[#D4A843]/40 bg-gradient-to-r from-[#FDFBF7] via-white to-[#FDFBF7] px-8 py-10 text-center">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-4">
+              <span className="text-[#D4A843] text-xl">♛</span>
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+              <div className="w-16 h-16 rounded-full border border-[#D4A843]/50 bg-[#D4A843]/10 flex items-center justify-center flex-shrink-0">
+                <ShieldCheck size={28} className="text-[#8B6914]" />
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="font-script text-2xl md:text-3xl text-[#1A1A1A] mb-1">Produits certifiés par Santé Canada</h3>
+                <p className="text-sm font-sans text-[#6B6B6B] leading-relaxed max-w-lg">
+                  Chaque soin Afro Queens est fabriqué au Canada et certifié par Santé Canada — un gage de qualité, de sécurité et de confiance pour votre couronne.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED PRODUCTS */}
       <section className="py-24 bg-[#F5F0EA]">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -126,8 +148,8 @@ export default function HomePage() {
             <div className="absolute -top-4 -left-4 w-24 h-24 border border-[#D4A843]/30 z-0"/>
             <div className="grid grid-cols-2 gap-3 relative z-10">
               {products.slice(0,4).map(p => (
-                <div key={p.id} className="rounded overflow-hidden flex items-center justify-center p-3" style={{background:'#1A0F00',aspectRatio:'1'}}>
-                  <Image src={p.image} alt={p.name} width={150} height={150} className="w-full h-full object-contain"/>
+                <div key={p.id} className="rounded overflow-hidden relative" style={{aspectRatio:'1'}}>
+                  <Image src={p.image} alt={p.name} fill className="object-cover"/>
                 </div>
               ))}
             </div>
@@ -183,7 +205,7 @@ export default function HomePage() {
       {/* CTA BANNER */}
       <section className="relative py-24 overflow-hidden" style={{backgroundColor:'#1A0F00'}}>
         <div className="absolute inset-0">
-          <Image src="/images/products-grid.jpeg" alt="bg" fill className="object-cover opacity-10" />
+          <Image src="/images/products/gamme.jpg" alt="Gamme complète Afro Queens" fill className="object-cover opacity-10" />
         </div>
         <div className="absolute inset-0" style={{background:'linear-gradient(135deg,rgba(26,15,0,0.94) 0%,rgba(61,43,10,0.90) 50%,rgba(26,15,0,0.94) 100%)'}}/>
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
@@ -193,7 +215,7 @@ export default function HomePage() {
             Rejoignez des milliers de reines qui ont déjà adopté Afro Queens comme leur rituel capillaire quotidien.
           </p>
           <p className="text-[#D4A843] text-xs font-sans mb-10 tracking-wide">
-            🚚 Livraison offerte à partir de 100$ CAD · Expédition sous 48h · Hawkesbury, Ontario
+            🚚 Livraison offerte à partir de 200 CAD d&apos;achat · Expédition sous 48h · Hawkesbury, Ontario
           </p>
           <Link href="/boutique" className="inline-flex items-center gap-3 bg-[#E07B39] text-white font-sans tracking-widest uppercase text-xs px-10 py-5 hover:bg-[#D4A843] transition-all duration-300 group">
             Commencer mon rituel <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

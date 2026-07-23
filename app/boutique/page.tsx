@@ -91,7 +91,7 @@ export default function BoutiquePage() {
               <p className="text-sm font-sans text-[#6B6B6B] mb-2">
                 Nos kits sont composés de produits complémentaires soigneusement sélectionnés pour votre type de cheveux.
               </p>
-              <p className="text-xs font-sans text-[#E07B39]">🚚 Livraison offerte à partir de 100$ CAD</p>
+              <p className="text-xs font-sans text-[#E07B39]">🚚 Livraison offerte à partir de 200 CAD d&apos;achat</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {bundles.map(bundle => <BundleCard key={bundle.id} bundle={bundle} />)}
@@ -102,8 +102,8 @@ export default function BoutiquePage() {
         {/* Bottom promo */}
         <div className="mt-20 bg-[#F5F0EA] p-10 text-center">
           <p className="text-xs tracking-[0.3em] uppercase text-[#E07B39] mb-3">Livraison offerte</p>
-          <h3 className="font-script text-3xl text-[#1A1A1A] mb-2">À partir de 100$ CAD d&apos;achat</h3>
-          <p className="text-sm font-sans text-[#6B6B6B]">Livraison express 2-3 jours · Retours gratuits · Paiement sécurisé · Hawkesbury, Ontario</p>
+          <h3 className="font-script text-3xl text-[#1A1A1A] mb-2">À partir de 200 CAD d&apos;achat</h3>
+          <p className="text-sm font-sans text-[#6B6B6B]">Livraison express 2-3 jours · Retours gratuits · Certifié Santé Canada · Hawkesbury, Ontario</p>
         </div>
       </div>
     </div>

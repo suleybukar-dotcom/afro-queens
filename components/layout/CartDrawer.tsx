@@ -1,9 +1,9 @@
 'use client';
 
-import { X, Plus, Minus, ShoppingBag, Trash2 } from 'lucide-react';
+import { X, Plus, Minus, ShoppingBag, Trash2, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useCart } from '@/lib/cart-context';
+import { whatsappOrderUrl } from '@/lib/data';
 
 export default function CartDrawer() {
   const { items, isOpen, setIsOpen, removeItem, updateQuantity, totalPrice, totalItems } = useCart();
@@ -78,7 +78,7 @@ export default function CartDrawer() {
                         </button>
                       </div>
                       <span className="font-sans font-600 text-orange-DEFAULT">
-                        {(product.price * quantity).toFixed(2)} €
+                        {(product.price * quantity).toFixed(2)} $ CAD
                       </span>
                     </div>
                   </div>
@@ -99,18 +99,21 @@ export default function CartDrawer() {
           <div className="p-6 border-t border-gray-100 bg-gris-warm">
             <div className="flex justify-between items-center mb-4">
               <span className="font-sans text-sm tracking-wide text-gris-DEFAULT uppercase">Total</span>
-              <span className="font-script text-2xl text-noir-DEFAULT">{totalPrice.toFixed(2)} €</span>
+              <span className="font-script text-2xl text-noir-DEFAULT">{totalPrice.toFixed(2)} $ CAD</span>
             </div>
             <p className="text-xs text-gris-DEFAULT font-sans mb-4 text-center">
-              Livraison gratuite à partir de 50€ · Taxes incluses
+              Livraison offerte à partir de 200 CAD d&apos;achat
             </p>
-            <Link
-              href="/checkout"
+            <a
+              href={whatsappOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="btn-primary w-full text-center block"
+              className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-sans tracking-widest uppercase text-xs py-4 transition-colors"
             >
-              Commander maintenant
-            </Link>
+              <MessageCircle size={16} fill="white" />
+              Commander sur WhatsApp
+            </a>
             <button
               onClick={() => setIsOpen(false)}
               className="w-full text-center text-xs font-sans text-gris-DEFAULT hover:text-noir-DEFAULT mt-3 transition-colors tracking-wide"

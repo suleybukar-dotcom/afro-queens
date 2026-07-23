@@ -11,7 +11,7 @@ export default function MentionsLegalesPage() {
           {[
             {
               title: "Éditeur du site",
-              content: `Afro Queens\nSociété : [Forme juridique à compléter]\nSiège social : France\nEmail : contact@afroqueens.com\nTéléphone : +33 7 XX XX XX XX`
+              content: `Afro Queens\nSiège : Hawkesbury, Ontario, Canada\nEmail : mbouoh@gmail.com\nTéléphone : 613 307 7293 · 613 307 9593`
             },
             {
               title: "Hébergement",
@@ -27,7 +27,7 @@ export default function MentionsLegalesPage() {
             },
             {
               title: "Données personnelles",
-              content: `Les données collectées sur ce site sont traitées conformément au RGPD. Pour exercer vos droits d'accès, de rectification ou de suppression, contactez-nous à contact@afroqueens.com.`
+              content: `Les données collectées sur ce site sont traitées conformément à la réglementation en vigueur. Pour exercer vos droits d'accès, de rectification ou de suppression, contactez-nous à mbouoh@gmail.com.`
             },
           ].map((section, i) => (
             <div key={i}>

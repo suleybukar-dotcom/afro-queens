@@ -19,19 +19,19 @@ export default function CGVPage() {
             },
             {
               title: "3. Prix",
-              content: "Les prix sont indiqués en euros TTC. Afro Queens se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable à la commande est celui en vigueur au moment de la validation de la commande."
+              content: "Les prix sont indiqués en dollars canadiens (CAD). Afro Queens se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable à la commande est celui en vigueur au moment de la validation de la commande."
             },
             {
               title: "4. Commande",
-              content: "La commande est validée après confirmation du paiement. Un email de confirmation est envoyé à l'adresse fournie lors de la commande."
+              content: "Les commandes s'effectuent directement via WhatsApp. La commande est validée après confirmation avec notre équipe. Une confirmation est envoyée via WhatsApp ou par email."
             },
             {
               title: "5. Paiement",
-              content: "Le paiement s'effectue en ligne par carte bancaire via Stripe ou par PayPal. La transaction est sécurisée par cryptage SSL. Le paiement est débité lors de la validation de la commande."
+              content: "Les modalités de règlement sont convenues directement avec notre équipe lors de la confirmation de la commande via WhatsApp. Le paiement est confirmé lors de la validation de la commande."
             },
             {
               title: "6. Livraison",
-              content: "Les commandes sont expédiées sous 48-72h ouvrées. La livraison est offerte à partir de 50€ d'achat. En dessous, les frais de port sont de 5,90€. Les délais indicatifs de livraison sont de 3 à 5 jours ouvrés."
+              content: "Les commandes sont expédiées sous 48-72h ouvrées depuis Hawkesbury, Ontario. La livraison est offerte à partir de 200 CAD d'achat. Les délais indicatifs de livraison sont de 2 à 3 jours ouvrés au Canada."
             },
             {
               title: "7. Droit de rétractation",
@@ -43,7 +43,7 @@ export default function CGVPage() {
             },
             {
               title: "9. Service client",
-              content: "Pour toute question, contactez-nous :\n- Email : contact@afroqueens.com\n- WhatsApp : +33 7 XX XX XX XX\n- Formulaire de contact sur le site"
+              content: "Pour toute question, contactez-nous :\n- Email : mbouoh@gmail.com\n- WhatsApp : 613 307 7293 ou 613 307 9593\n- Formulaire de contact sur le site"
             },
           ].map((section, i) => (
             <div key={i}>

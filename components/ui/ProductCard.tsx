@@ -33,7 +33,8 @@ export default function ProductCard({ product }: Props) {
             alt={product.name}
             fill
             loading="lazy"
-            className="object-contain p-6 transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (

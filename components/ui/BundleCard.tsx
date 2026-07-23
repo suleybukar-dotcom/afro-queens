@@ -1,8 +1,8 @@
 'use client';
-import { ShoppingBag, Check } from 'lucide-react';
+import { ShoppingBag, Check, MessageCircle } from 'lucide-react';
 import { Bundle } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
-import { products } from '@/lib/data';
+import { products, whatsappOrderUrl } from '@/lib/data';
 import { useState } from 'react';
 
 interface Props { bundle: Bundle; }
@@ -70,7 +70,7 @@ export default function BundleCard({ bundle }: Props) {
         )}
 
         {/* Price + CTA */}
-        <div className="flex items-end justify-between gap-3 mt-auto">
+        <div className="flex items-end justify-between gap-3 mt-auto mb-4">
           <div>
             <div className="flex items-baseline gap-2">
               <span className="font-script text-3xl text-[#1A1A1A]">${bundle.price}</span>
@@ -86,9 +86,18 @@ export default function BundleCard({ bundle }: Props) {
             style={{ backgroundColor: added ? '#16a34a' : bundle.color }}
           >
             <ShoppingBag size={13} />
-            {added ? '✓ Ajouté !' : 'Choisir'}
+            {added ? '✓ Ajouté !' : 'Ajouter'}
           </button>
         </div>
+        <a
+          href={whatsappOrderUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-sans tracking-widest uppercase py-3 transition-colors"
+        >
+          <MessageCircle size={14} fill="white" />
+          Commander sur WhatsApp
+        </a>
       </div>
     </div>
   );

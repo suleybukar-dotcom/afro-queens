@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Mail, Phone, MessageCircle, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MessageCircle, MapPin, Send, CheckCircle, Instagram, Music2 } from 'lucide-react';
 import { contactInfo } from '@/lib/data';
 
 export default function ContactPage() {
@@ -62,6 +62,18 @@ export default function ContactPage() {
             </div>
 
             <div className="border border-[#E07B39]/20 p-5">
+              <p className="text-xs tracking-[0.2em] uppercase text-[#E07B39] mb-3">Suivez-nous</p>
+              <div className="flex items-center gap-3 mb-5">
+                <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Afro Queens"
+                  className="flex items-center gap-2 text-sm font-sans text-[#6B6B6B] hover:text-[#E07B39] transition-colors">
+                  <Instagram size={16}/> Instagram
+                </a>
+                <span className="text-[#BBBBBB]">·</span>
+                <a href={contactInfo.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok Afro Queens"
+                  className="flex items-center gap-2 text-sm font-sans text-[#6B6B6B] hover:text-[#E07B39] transition-colors">
+                  <Music2 size={16}/> TikTok
+                </a>
+              </div>
               <p className="text-xs tracking-[0.2em] uppercase text-[#E07B39] mb-2">Délais de réponse</p>
               <ul className="space-y-2 text-sm font-sans text-[#6B6B6B]">
                 <li className="flex items-center gap-2"><span className="text-green-500">●</span> WhatsApp : &lt; 2 heures</li>

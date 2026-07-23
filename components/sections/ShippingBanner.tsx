@@ -1,10 +1,10 @@
-import { Truck, Shield, RefreshCw, Clock } from 'lucide-react';
+import { Truck, ShieldCheck, RefreshCw, Clock } from 'lucide-react';
 
 export default function ShippingBanner() {
   const items = [
-    { icon: <Truck size={20} />, title: "Livraison offerte", desc: "À partir de 100$ CAD" },
+    { icon: <Truck size={20} />, title: "Livraison offerte", desc: "À partir de 200 CAD d'achat" },
     { icon: <Clock size={20} />, title: "Livraison express", desc: "2-3 jours ouvrés" },
-    { icon: <Shield size={20} />, title: "Paiement sécurisé", desc: "SSL · Stripe · PayPal" },
+    { icon: <ShieldCheck size={20} />, title: "Certifié Santé Canada", desc: "Fabriqué au Canada" },
     { icon: <RefreshCw size={20} />, title: "Retours gratuits", desc: "Sous 14 jours" },
   ];
   return (

@@ -3,8 +3,8 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShoppingBag, Star, ChevronDown, ArrowLeft, Shield, Truck, RefreshCw } from 'lucide-react';
-import { products } from '@/lib/data';
+import { ShoppingBag, Star, ArrowLeft, ShieldCheck, Truck, RefreshCw, MessageCircle } from 'lucide-react';
+import { products, whatsappOrderUrl } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
 import ProductCard from '@/components/ui/ProductCard';
 import { useState } from 'react';
@@ -23,6 +23,9 @@ export default function ProductPage({ params }: Props) {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<Tab>('description');
   const [added, setAdded] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+
+  const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
 
   const related = products.filter(p => p.id !== product.id).slice(0, 3);
 
@@ -63,16 +66,34 @@ export default function ProductPage({ params }: Props) {
             )}
             <div className="relative aspect-square bg-gris-warm overflow-hidden">
               <Image
-                src={product.image}
+                src={gallery[activeImage]}
                 alt={product.name}
                 fill
                 className="object-cover"
+                priority
               />
+              {/* Volume badge */}
+              <div className="absolute bottom-4 right-4 bg-white border border-gray-200 px-4 py-2">
+                <span className="text-xs font-sans text-gris-DEFAULT tracking-wide">{product.volume}</span>
+              </div>
             </div>
-            {/* Volume badge */}
-            <div className="absolute bottom-4 right-4 bg-white border border-gray-200 px-4 py-2">
-              <span className="text-xs font-sans text-gris-DEFAULT tracking-wide">{product.volume}</span>
-            </div>
+            {/* Gallery thumbnails */}
+            {gallery.length > 1 && (
+              <div className="grid grid-cols-4 gap-3 mt-3">
+                {gallery.map((img, i) => (
+                  <button
+                    key={img}
+                    onClick={() => setActiveImage(i)}
+                    aria-label={`Photo ${i + 1} de ${product.name}`}
+                    className={`relative aspect-square overflow-hidden bg-gris-warm transition-all ${
+                      activeImage === i ? 'ring-2 ring-orange-DEFAULT' : 'opacity-70 hover:opacity-100'
+                    }`}
+                  >
+                    <Image src={img} alt={`${product.name} — vue ${i + 1}`} fill className="object-cover" sizes="120px" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Info */}
@@ -98,9 +119,9 @@ export default function ProductPage({ params }: Props) {
 
             {/* Price */}
             <div className="flex items-baseline gap-4 mb-8">
-              <span className="font-script text-4xl text-noir-DEFAULT">{product.price.toFixed(2)} €</span>
+              <span className="font-script text-4xl text-noir-DEFAULT">{product.price.toFixed(2)} $ CAD</span>
               {product.originalPrice && (
-                <span className="text-lg text-gris-DEFAULT font-sans line-through">{product.originalPrice.toFixed(2)} €</span>
+                <span className="text-lg text-gris-DEFAULT font-sans line-through">{product.originalPrice.toFixed(2)} $</span>
               )}
               {product.originalPrice && (
                 <span className="text-xs bg-orange-DEFAULT text-white px-2 py-1 font-sans">
@@ -149,17 +170,19 @@ export default function ProductPage({ params }: Props) {
               </button>
             </div>
 
-            {/* PayPal button (simulated) */}
-            <button className="w-full bg-[#FFC439] text-[#003087] font-sans font-600 text-sm py-3.5 hover:bg-[#F0B429] transition-colors mb-6">
-              <span className="font-bold">Pay</span><span>Pal</span> — Commander rapidement
-            </button>
+            {/* WhatsApp order button */}
+            <a href={whatsappOrderUrl} target="_blank" rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-sans tracking-widest uppercase text-xs py-4 transition-colors mb-6">
+              <MessageCircle size={16} fill="white" />
+              Commander sur WhatsApp
+            </a>
 
             {/* Trust signals */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-100">
               {[
-                { icon: <Truck size={16} />, label: "Livraison express" },
+                { icon: <Truck size={16} />, label: "Livraison offerte dès 200 CAD" },
                 { icon: <RefreshCw size={16} />, label: "Retours 14 jours" },
-                { icon: <Shield size={16} />, label: "Paiement sécurisé" },
+                { icon: <ShieldCheck size={16} />, label: "Certifié Santé Canada" },
               ].map((t, i) => (
                 <div key={i} className="flex flex-col items-center gap-2 text-center">
                   <div className="text-orange-DEFAULT">{t.icon}</div>

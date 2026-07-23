@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Shield, Truck } from 'lucide-react';
+import { Mail, Phone, MapPin, Truck, Instagram, ShieldCheck, Music2 } from 'lucide-react';
 import { contactInfo } from '@/lib/data';
 
 export default function Footer() {
@@ -9,11 +9,11 @@ export default function Footer() {
       {/* Shipping bar */}
       <div className="bg-[#E07B39] py-3">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-wrap items-center justify-center gap-6 text-white text-xs font-sans">
-          <span className="flex items-center gap-2"><Truck size={14}/>Livraison offerte à partir de 100$ CAD</span>
+          <span className="flex items-center gap-2"><Truck size={14}/>Livraison offerte à partir de 200 CAD d&apos;achat</span>
           <span className="hidden md:block opacity-40">|</span>
           <span>Expédition 2-3 jours ouvrés depuis Hawkesbury, Ontario</span>
           <span className="hidden md:block opacity-40">|</span>
-          <span className="flex items-center gap-2"><Shield size={14}/>Paiement 100% sécurisé</span>
+          <span className="flex items-center gap-2"><ShieldCheck size={14}/>Produits certifiés par Santé Canada</span>
         </div>
       </div>
 
@@ -51,7 +51,17 @@ export default function Footer() {
           <p className="text-white/50 text-sm font-sans leading-relaxed mb-4">
             Des formules naturelles et puissantes conçues avec amour pour sublimer vos cheveux crépus, bouclés et frisés.
           </p>
-          <p className="text-white/30 text-xs font-sans">📍 Hawkesbury, Ontario, Canada</p>
+          <p className="text-white/30 text-xs font-sans mb-5">📍 Hawkesbury, Ontario, Canada</p>
+          <div className="flex items-center gap-3">
+            <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram Afro Queens"
+              className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#E07B39] hover:bg-[#E07B39] transition-all">
+              <Instagram size={16}/>
+            </a>
+            <a href={contactInfo.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok Afro Queens"
+              className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-[#E07B39] hover:bg-[#E07B39] transition-all">
+              <Music2 size={16}/>
+            </a>
+          </div>
         </div>
 
         {/* Navigation */}
@@ -69,11 +79,11 @@ export default function Footer() {
           <h4 className="text-xs tracking-[0.3em] uppercase text-[#D4A843] mb-6">Nos Produits</h4>
           <ul className="space-y-3">
             {[
-              ['Shampoing Capillaire', '30$ CAD'],
+              ['Shampoing Gainant', '30$ CAD'],
               ['Sérum Huileux Fortifiant', '30$ CAD'],
-              ['Spray Capillaire', '30$ CAD'],
+              ['Spray Hydratant', '30$ CAD'],
               ['Crème Capillaire Protéinée', '35$ CAD'],
-              ['Masque Capillaire', '35$ CAD'],
+              ['Masque Capillaire Protéiné', '35$ CAD'],
             ].map(([name, price]) => (
               <li key={name} className="flex items-center justify-between">
                 <Link href="/boutique" className="text-white/50 text-sm font-sans hover:text-[#E07B39] transition-colors">{name}</Link>
@@ -105,10 +115,10 @@ export default function Footer() {
           </ul>
           <div className="mt-6 p-4 border border-white/10 bg-white/5">
             <div className="flex items-center gap-2 mb-1">
-              <Shield size={11} className="text-[#D4A843]"/>
-              <p className="text-xs text-white/40 font-sans">Paiement sécurisé · SSL · 3D Secure</p>
+              <ShieldCheck size={11} className="text-[#D4A843]"/>
+              <p className="text-xs text-white/40 font-sans">Produits certifiés par Santé Canada</p>
             </div>
-            <p className="text-xs text-white/40 font-sans">🚚 Livraison offerte dès 100$ CAD</p>
+            <p className="text-xs text-white/40 font-sans">🚚 Livraison offerte dès 200 CAD d&apos;achat</p>
           </div>
         </div>
       </div>
